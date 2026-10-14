@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organize and track your daily expenses with PesoWise.">
+    <title>Expense Tracker | PesoWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">Peso<span>Wise</span></a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="transactions.html" aria-current="page">Expenses</a></li>
+                <li><a href="savings.html">Savings Goals</a></li>
+                <li><a href="confirmation.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="transactions-page">
+
+        <section class="transactions-intro">
+            <p class="eyebrow">YOUR EXPENSES, ORGANIZED</p>
+            <h1>Know Where Your <span>Money Goes.</span></h1>
+            <p>
+                Keep your spending organized by recording your expenses,
+                choosing categories, and reviewing your entries.
+            </p>
+        </section>
+
+        <section class="transaction-summary" aria-label="Expense summary">
+            <article class="transaction-summary-card">
+                <div class="summary-icon" aria-hidden="true">₱</div>
+                <div>
+                    <p>Total Expenses</p>
+                    <h2>₱ —</h2>
+                    <span>Enter expenses to get started</span>
+                </div>
+            </article>
+
+            <article class="transaction-summary-card">
+                <div class="summary-icon" aria-hidden="true">▤</div>
+                <div>
+                    <p>Recorded Entries</p>
+                    <h2>—</h2>
+                    <span>No records displayed yet</span>
+                </div>
+            </article>
+        </section>
+
+        <div class="transactions-layout">
+
+            <section class="transaction-form-panel">
+                <div class="transaction-panel-heading">
+                    <p class="eyebrow">NEW ENTRY</p>
+                    <h2>Record an Expense</h2>
+                    <p>
+                        Enter the details of an expense you want
+                        to include in your records.
+                    </p>
+                </div>
+
+                <form id="expense-form" method="get">
+
+                    <div class="form-group">
+                        <label for="expense-description">
+                            Expense description
+                        </label>
+                        <input
+                            type="text"
+                            id="expense-description"
+                            name="description"
+                            placeholder="e.g. Lunch at school"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-amount">Amount (PHP)</label>
+                        <input
+                            type="number"
+                            id="expense-amount"
+                            name="amount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="e.g. 150.00"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-category">Category</label>
+                        <select
+                            id="expense-category"
+                            name="category"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Choose a category
+                            </option>
+                            <option value="food">Food and Drinks</option>
+                            <option value="transport">Transportation</option>
+                            <option value="school">School Expenses</option>
+                            <option value="personal">Personal Needs</option>
+                            <option value="bills">Bills and Subscriptions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-date">Date of expense</label>
+                        <input
+                            type="date"
+                            id="expense-date"
+                            name="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expense-notes">
+                            Notes (optional)
+                        </label>
+                        <textarea
+                            id="expense-notes"
+                            name="notes"
+                            rows="3"
+                            maxlength="250"
+                            placeholder="Add a short note about this expense"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="button button-primary">
+                        Add Expense
+                    </button>
+
+                    <p class="form-hint transaction-form-hint">
+                        Your expense will be added to your records
+                        and saved in this browser.
+                    </p>
+                </form>
+            </section>
+
+            <section class="transaction-records-panel">
+                <div class="records-heading">
+                    <div>
+                        <p class="eyebrow">YOUR RECORDS</p>
+                        <h2>Expense History</h2>
+                    </div>
+                    <span class="records-badge">Expense Records</span>
+                </div>
+
+                <p class="records-description">
+                    Review your recorded expenses, check their details,
+                    and delete entries you no longer need.
+                </p>
+
+                <div class="table-wrapper">
+                    <table class="expense-table">
+                        <caption>
+                            Expense records and their details
+                        </caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Expense</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="empty-table">
+                                    <span
+                                        class="empty-table-icon"
+                                        aria-hidden="true"
+                                    >♡</span>
+
+                                    <strong>No expenses to display</strong>
+
+                                    <span>
+                                        Add an expense using the form
+                                        to see it listed here.
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="records-note">
+                    <strong>Keep your records clear.</strong>
+                    <p>
+                        Use short descriptions and the correct categories
+                        to make your expenses easier to review.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="transactions-bottom">
+            <div>
+                <p class="eyebrow">ONE STEP AT A TIME</p>
+                <h2>Make spending more intentional.</h2>
+                <p>
+                    Review your budget and savings goals as you plan
+                    how to use your allowance.
+                </p>
+            </div>
+
+            <div class="transactions-actions">
+                <a href="dashboard.html" class="button button-primary">
+                    Back to Dashboard
+                </a>
+
+                <a href="savings.html" class="button button-secondary">
+                    View Savings Goals
+                </a>
+            </div>
+        </section>
+
+        <p class="prototype-notice">
+            <strong>Prototype notice:</strong>
+            Expense records are saved in your browser using local storage.
+            They are not connected to a bank account or online database.
+        </p>
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html" class="logo">Peso<span>Wise</span></a>
+        <p>Make Every Peso Count.</p>
+        <p class="copyright">
+            &copy; 2026 PesoWise. Student budgeting website prototype.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

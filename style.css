@@ -1,0 +1,1629 @@
+
+/* ==================================================
+   PESOWISE | MAIN STYLESHEET
+   HTML5 + External CSS only
+   ================================================== */
+
+
+/* ---------- 1. COLOR PALETTE ---------- */
+
+:root {
+    --pink: #e9a6bd;
+    --pink-light: #fff0f5;
+    --pink-pale: #fff8fa;
+    --berry: #71354e;
+    --berry-dark: #4e2437;
+    --text: #4c3b43;
+    --muted: #887680;
+    --white: #ffffff;
+    --border: #f0dce4;
+
+    --shadow: 0 8px 28px rgba(113, 53, 78, 0.06);
+    --shadow-hover: 0 14px 32px rgba(113, 53, 78, 0.10);
+
+    --radius-small: 8px;
+    --radius-medium: 14px;
+    --radius-large: 18px;
+
+    --content-width: 1120px;
+}
+
+
+/* ---------- 2. RESET AND GENERAL STYLES ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c36589;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--berry);
+    outline-offset: 3px;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--berry-dark);
+    line-height: 1.25;
+}
+
+p {
+    color: var(--muted);
+}
+
+ul,
+ol {
+    padding-left: 1.4rem;
+}
+
+.section-container {
+    width: min(var(--content-width), 90%);
+    margin: 0 auto;
+}
+
+.eyebrow,
+.section-label {
+    margin-bottom: 12px;
+    color: #bd6487;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main {
+    min-height: 60vh;
+}
+
+
+/* ---------- 3. NAVIGATION ---------- */
+
+.site-header {
+    position: relative;
+    z-index: 2;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    color: var(--berry-dark);
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #cf7898;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px 25px;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: #c36589;
+}
+
+
+/* ---------- 4. BUTTONS AND LINKS ---------- */
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    background-color: var(--berry);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background-color: var(--berry-dark);
+    color: var(--white);
+}
+
+.button-secondary,
+.secondary-button {
+    border: 1px solid #dfb4c5;
+    background-color: var(--white);
+    color: var(--berry);
+}
+
+.button-secondary:hover,
+.secondary-button:hover {
+    border-color: var(--pink);
+    background-color: var(--pink-light);
+    color: var(--berry-dark);
+}
+
+.text-link {
+    color: var(--berry);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: #c36589;
+    text-decoration: underline;
+}
+
+.secondary-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    border-radius: var(--radius-small);
+    font-weight: 700;
+}
+
+
+/* ---------- 5. HOME PAGE: HERO ---------- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 60px;
+    overflow: hidden;
+    padding: 80px max(5%, calc((100% - var(--content-width)) / 2));
+    background: linear-gradient(
+        120deg,
+        var(--pink-pale),
+        var(--pink-light)
+    );
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero h1 {
+    max-width: 600px;
+    color: var(--berry-dark);
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+    letter-spacing: -2px;
+}
+
+.hero h1 span,
+.section-heading h2 span {
+    color: #c66e91;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin-top: 22px;
+    font-size: 1.03rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-note {
+    margin-top: 18px;
+    font-size: 0.82rem;
+}
+
+
+/* ---------- 6. HOME PAGE: WELCOME CARD ---------- */
+
+.hero-visual {
+    position: relative;
+    min-width: 0;
+    padding: 15px;
+}
+
+.welcome-card {
+    position: relative;
+    z-index: 1;
+    padding: 32px;
+    border: 1px solid #f2dce5;
+    border-radius: 20px;
+    background-color: var(--white);
+    box-shadow: 0 18px 50px rgba(113, 53, 78, 0.09);
+}
+
+.card-label {
+    color: #c16b8c;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.welcome-card h2 {
+    margin-top: 8px;
+    font-size: 1.8rem;
+}
+
+.welcome-card > p:not(.card-label) {
+    margin-top: 10px;
+    font-size: 0.92rem;
+}
+
+.mini-divider {
+    height: 1px;
+    margin: 25px 0;
+    background-color: var(--border);
+}
+
+.welcome-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.circle-icon {
+    display: grid;
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.welcome-item h3 {
+    font-size: 0.98rem;
+}
+
+.welcome-item p {
+    margin-top: 3px;
+    font-size: 0.82rem;
+}
+
+.decorative-circle {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: #f3cad9;
+}
+
+
+/* ---------- 7. HOME PAGE: FEATURES ---------- */
+
+.features {
+    padding: 85px 0 95px;
+}
+
+.features .section-heading {
+    width: min(100%, 700px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features .section-heading h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -1px;
+}
+
+.features .section-heading > p:last-child {
+    max-width: 650px;
+    margin: 15px auto 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 42px;
+}
+
+.feature-card {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    background-color: var(--white);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.feature-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    place-items: center;
+    border-radius: 12px;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-size: 1.65rem;
+}
+
+.feature-card h3 {
+    font-size: 1.15rem;
+}
+
+.feature-card p {
+    margin: 12px 0 20px;
+    font-size: 0.92rem;
+}
+
+
+/* ---------- 8. HOME PAGE: GETTING STARTED ---------- */
+
+.getting-started {
+    padding: 75px 5%;
+    background-color: var(--pink-pale);
+}
+
+.getting-started-content {
+    display: flex;
+    width: min(800px, 100%);
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+}
+
+.getting-started-content .eyebrow {
+    margin-bottom: 8px;
+}
+
+.getting-started-content h2 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+/* FIXED NUMBERED LIST SPACING */
+
+.steps-list {
+    width: fit-content;
+    max-width: 100%;
+    padding-left: 1.5rem;
+    margin: 0;
+    text-align: left;
+    list-style-position: outside;
+}
+
+.steps-list li {
+    margin: 0 0 18px;
+    padding-left: 0.25rem;
+    text-indent: 0;
+    color: var(--muted);
+}
+
+.steps-list li strong {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.steps-list h3 {
+    font-size: 1rem;
+}
+
+.steps-list p {
+    margin-top: 5px;
+    font-size: 0.88rem;
+}
+
+.step-number {
+    color: #c36589;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.getting-started-content > .button {
+    align-self: center;
+}
+
+
+/* ---------- 9. PRIVACY NOTE ---------- */
+
+.privacy-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.privacy-icon {
+    display: grid;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-size: 1.5rem;
+}
+
+.privacy-note h2 {
+    font-size: 1.15rem;
+}
+
+.privacy-note p {
+    margin-top: 7px;
+    font-size: 0.88rem;
+}
+
+
+/* ---------- 10. SHARED PAGE INTRODUCTIONS ---------- */
+
+.dashboard-intro,
+.transactions-intro,
+.savings-intro {
+    padding: 60px 5% 40px;
+    text-align: center;
+}
+
+.dashboard-intro,
+.transactions-intro {
+    background-color: var(--pink-pale);
+}
+
+.savings-intro {
+    padding-bottom: 45px;
+    background: linear-gradient(120deg, var(--pink-pale), var(--pink-light));
+}
+
+.dashboard-intro .eyebrow,
+.transactions-intro .eyebrow,
+.savings-intro .eyebrow {
+    margin-bottom: 12px;
+}
+
+.dashboard-intro h1,
+.transactions-intro h1,
+.savings-intro h1 {
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    letter-spacing: -1.5px;
+}
+
+.dashboard-intro h1 span,
+.transactions-intro h1 span,
+.savings-intro h1 span {
+    color: #c66e91;
+}
+
+.dashboard-intro > p:last-child,
+.transactions-intro > p:last-child {
+    max-width: 650px;
+    margin: 15px auto 0;
+}
+
+.savings-intro > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 15px auto 25px;
+}
+
+
+/* ---------- 11. SHARED PAGE BACKGROUNDS ---------- */
+
+.dashboard-page,
+.transactions-page,
+.savings-page {
+    min-height: 70vh;
+    padding-bottom: 60px;
+    background-color: #fffafd;
+}
+
+
+/* ---------- 12. SHARED OVERVIEW CARDS ---------- */
+
+.budget-overview,
+.transaction-summary,
+.savings-overview {
+    width: min(var(--content-width), 90%);
+    margin: 30px auto;
+    display: grid;
+    gap: 20px;
+}
+
+.budget-overview,
+.savings-overview {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.transaction-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.overview-card,
+.transaction-summary-card,
+.savings-overview-card {
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    background-color: var(--white);
+}
+
+.overview-card,
+.savings-overview-card {
+    padding: 24px;
+}
+
+.transaction-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+}
+
+.overview-icon,
+.summary-icon,
+.savings-overview-icon {
+    display: grid;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 15px;
+    place-items: center;
+    border-radius: 12px;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.transaction-summary-card .summary-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0;
+}
+
+.overview-card > p,
+.transaction-summary-card p,
+.savings-overview-card > p {
+    font-size: 0.9rem;
+}
+
+.overview-card h2,
+.transaction-summary-card h2,
+.savings-overview-card h2 {
+    margin-top: 6px;
+    font-size: 1.7rem;
+    overflow-wrap: anywhere;
+}
+
+.overview-card > span,
+.transaction-summary-card span,
+.savings-overview-card > span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+
+/* ---------- 13. SHARED CONTENT PANELS ---------- */
+
+.dashboard-layout,
+.transactions-layout,
+.savings-layout {
+    width: min(var(--content-width), 90%);
+    margin: 0 auto;
+    display: grid;
+    align-items: start;
+    gap: 25px;
+}
+
+.dashboard-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.transactions-layout {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+}
+
+.savings-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.dashboard-panel,
+.transaction-form-panel,
+.transaction-records-panel,
+.savings-form-panel,
+.savings-goals-panel {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.panel-heading,
+.transaction-panel-heading,
+.savings-panel-heading {
+    margin-bottom: 22px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.panel-heading .eyebrow,
+.transaction-panel-heading .eyebrow,
+.records-heading .eyebrow,
+.savings-panel-heading .eyebrow {
+    margin-bottom: 8px;
+}
+
+.panel-heading h2,
+.transaction-panel-heading h2,
+.records-heading h2,
+.savings-panel-heading h2 {
+    font-size: 1.5rem;
+}
+
+.panel-symbol {
+    display: grid;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-size: 1.4rem;
+}
+
+.panel-description,
+.transaction-panel-heading > p:last-child,
+.records-description,
+.savings-panel-heading > p:last-child {
+    margin-top: 12px;
+    font-size: 0.88rem;
+}
+
+.panel-description {
+    margin-bottom: 24px;
+}
+
+
+/* ---------- 14. FORMS ---------- */
+
+.form-group {
+    min-width: 0;
+    margin-bottom: 20px;
+    border: 0;
+}
+
+.form-group > label,
+.form-group > legend {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--berry-dark);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #e8d4dd;
+    border-radius: var(--radius-small);
+    background-color: #fffafd;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a5959d;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #c66e91;
+    outline: 2px solid #d993af;
+    outline-offset: 2px;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    accent-color: var(--berry);
+}
+
+.choice-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.choice-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid #e8d4dd;
+    border-radius: var(--radius-small);
+    background-color: #fffafd;
+    color: var(--text);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.choice-option:hover {
+    border-color: var(--pink);
+    background-color: var(--pink-pale);
+}
+
+.choice-option input {
+    accent-color: var(--berry);
+}
+
+.form-hint,
+.transaction-form-hint,
+.savings-form-hint {
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.form-hint {
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.transaction-form-hint,
+.savings-form-hint {
+    margin-top: 12px;
+}
+
+.dashboard-panel .button,
+.transaction-form-panel .button,
+.savings-form-panel .button {
+    border: 0;
+    font-family: inherit;
+}
+
+.allowance-panel form > .button,
+.category-panel form > .button,
+.transaction-form-panel form > .button,
+.savings-form-panel form > .button {
+    width: 100%;
+}
+
+
+/* ---------- 15. DASHBOARD: BUDGET TIP ---------- */
+
+.budget-tip {
+    margin: 5px 0 22px;
+    padding: 17px;
+    border-left: 4px solid #d993af;
+    border-radius: 10px;
+    background-color: var(--pink-light);
+}
+
+.budget-tip strong {
+    color: var(--berry);
+    font-size: 0.9rem;
+}
+
+.budget-tip p {
+    margin-top: 5px;
+    font-size: 0.84rem;
+}
+
+
+/* ---------- 16. EXPENSE TRACKER: TABLE ---------- */
+
+.records-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.records-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.table-wrapper {
+    width: 100%;
+    margin-top: 25px;
+    overflow-x: auto;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.82rem;
+}
+
+.expense-table caption {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.expense-table th {
+    padding: 13px 10px;
+    background-color: var(--pink-light);
+    color: var(--berry);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.expense-table td {
+    padding: 13px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+.empty-table {
+    height: 230px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.empty-table span,
+.empty-table strong {
+    display: block;
+}
+
+.empty-table-icon {
+    margin-bottom: 10px;
+    color: #c66e91;
+    font-size: 2rem;
+}
+
+.empty-table strong {
+    color: var(--berry);
+    font-size: 0.95rem;
+}
+
+.empty-table span:last-child {
+    max-width: 260px;
+    margin: 8px auto 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.records-note {
+    margin-top: 22px;
+    padding: 17px;
+    border-radius: 10px;
+    background-color: var(--pink-light);
+}
+
+.records-note strong {
+    color: var(--berry);
+    font-size: 0.9rem;
+}
+
+.records-note p {
+    margin-top: 5px;
+    font-size: 0.83rem;
+}
+
+
+/* ---------- 17. SAVINGS GOALS: EMPTY STATE ---------- */
+
+.empty-goals {
+    padding: 35px 24px;
+    border: 1px dashed #dfb4c5;
+    border-radius: 12px;
+    background-color: #fffafd;
+    text-align: center;
+}
+
+.empty-goals-icon {
+    display: grid;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 18px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--pink-light);
+    color: #c66e91;
+    font-size: 2rem;
+}
+
+.empty-goals h3 {
+    font-size: 1.15rem;
+}
+
+.empty-goals p {
+    max-width: 360px;
+    margin: 12px auto 18px;
+    font-size: 0.87rem;
+}
+
+.savings-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: var(--pink-light);
+}
+
+.tip-icon {
+    flex-shrink: 0;
+    color: #c36589;
+    font-size: 1.4rem;
+}
+
+.savings-tip h3 {
+    font-size: 0.95rem;
+}
+
+.savings-tip p {
+    margin-top: 6px;
+    font-size: 0.84rem;
+}
+
+
+/* ---------- 18. SHARED BOTTOM SECTIONS ---------- */
+
+.dashboard-bottom,
+.transactions-bottom,
+.savings-bottom {
+    width: min(var(--content-width), 90%);
+    margin: 35px auto 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-radius: 15px;
+    background-color: var(--pink-light);
+}
+
+.dashboard-bottom h2,
+.transactions-bottom h2,
+.savings-bottom h2 {
+    font-size: 1.55rem;
+}
+
+.dashboard-bottom > div:first-child > p:last-child,
+.transactions-bottom > div:first-child > p:last-child,
+.savings-bottom > div:first-child > p:last-child {
+    max-width: 550px;
+    margin-top: 9px;
+    font-size: 0.88rem;
+}
+
+.bottom-actions,
+.transactions-actions,
+.savings-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bottom-actions .button,
+.transactions-actions .button,
+.savings-actions .button {
+    white-space: nowrap;
+}
+
+
+/* ---------- 19. PROTOTYPE NOTICE ---------- */
+
+.prototype-notice {
+    width: min(var(--content-width), 90%);
+    margin: 25px auto 0;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--white);
+    font-size: 0.82rem;
+}
+
+.prototype-notice strong {
+    color: var(--berry);
+}
+
+
+/* ---------- 20. HELP AND CONFIRMATION PAGE ---------- */
+
+.help-container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 35px 0 60px;
+}
+
+.help-hero {
+    margin-bottom: 50px;
+    padding: 55px 30px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, var(--pink-pale), #fce7ef);
+    text-align: center;
+}
+
+.help-hero .section-label {
+    margin-bottom: 12px;
+}
+
+.help-hero h1 {
+    margin-bottom: 15px;
+    color: var(--berry-dark);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.help-hero > p:not(.section-label) {
+    max-width: 620px;
+    margin: 0 auto 25px;
+    color: #674b58;
+    line-height: 1.7;
+}
+
+.help-section,
+.privacy-section {
+    margin-bottom: 50px;
+}
+
+.help-container .section-heading {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.help-container .section-heading h2,
+.confirmation-panel h2,
+.help-footer-cta h2 {
+    margin-bottom: 12px;
+    color: var(--berry-dark);
+    font-size: 1.8rem;
+}
+
+.help-container .section-heading > p:not(.section-label) {
+    color: #765c68;
+    line-height: 1.6;
+}
+
+.help-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.help-card {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background-color: var(--white);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.help-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.help-number {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #fce7ef;
+    color: #a3476b;
+    font-weight: 700;
+}
+
+.help-card h3 {
+    margin-bottom: 12px;
+    color: var(--berry-dark);
+}
+
+.help-card p {
+    margin-bottom: 18px;
+    color: #765c68;
+    line-height: 1.7;
+}
+
+.help-card a {
+    color: #a3476b;
+    font-weight: 700;
+}
+
+.help-card a:hover {
+    text-decoration: underline;
+}
+
+.confirmation-panel {
+    margin-bottom: 50px;
+    padding: 40px 30px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background-color: #fff7fa;
+    text-align: center;
+}
+
+.confirmation-icon {
+    display: grid;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 20px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #f4d4e1;
+    color: var(--berry-dark);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.confirmation-panel > p:not(.section-label) {
+    max-width: 720px;
+    margin: 0 auto 15px;
+    color: #765c68;
+    line-height: 1.8;
+}
+
+.privacy-list {
+    max-width: 850px;
+    margin: 0 auto;
+    padding-left: 25px;
+}
+
+.privacy-list li {
+    margin-bottom: 18px;
+    padding-left: 8px;
+    color: #765c68;
+    line-height: 1.8;
+}
+
+.privacy-list strong {
+    color: var(--berry-dark);
+}
+
+.help-footer-cta {
+    margin-bottom: 35px;
+    padding: 40px 25px;
+    border-radius: 18px;
+    background-color: #fce7ef;
+    text-align: center;
+}
+
+.help-footer-cta p {
+    margin-bottom: 22px;
+    color: #765c68;
+    line-height: 1.7;
+}
+
+
+/* ---------- 21. FOOTER ---------- */
+
+.site-footer {
+    padding: 35px 5%;
+    border-top: 1px solid var(--border);
+    background-color: #fff5f8;
+    text-align: center;
+}
+
+.site-footer .logo {
+    display: inline-block;
+    font-size: 1.45rem;
+}
+
+.site-footer > p {
+    margin-top: 6px;
+    font-size: 0.85rem;
+}
+
+.site-footer .copyright {
+    margin-top: 16px;
+    font-size: 0.78rem;
+}
+
+
+/* ---------- 22. TABLET RESPONSIVENESS ---------- */
+
+@media (max-width: 950px) {
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero-visual {
+        width: min(100%, 520px);
+        margin: 0 auto;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-layout,
+    .transactions-layout,
+    .savings-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-bottom,
+    .transactions-bottom,
+    .savings-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .help-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ---------- 23. MOBILE RESPONSIVENESS ---------- */
+
+@media (max-width: 600px) {
+    .navbar {
+        width: 92%;
+        padding: 18px 0;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 8px 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 45px 5%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 10vw, 2.9rem);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 0.96rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .welcome-card {
+        padding: 25px 20px;
+    }
+
+    .decorative-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .features {
+        padding: 55px 0 65px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 30px;
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+
+    .getting-started {
+        padding: 55px 5%;
+    }
+
+    .getting-started-content {
+        gap: 20px;
+    }
+
+    /* Keep the numbered list aligned on mobile */
+    .steps-list {
+        width: fit-content;
+        max-width: 100%;
+        padding-left: 1.5rem;
+        margin: 0;
+    }
+
+    .steps-list li {
+        padding-left: 0.25rem;
+        margin-bottom: 18px;
+        text-indent: 0;
+    }
+
+    .privacy-note {
+        gap: 14px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .dashboard-intro,
+    .transactions-intro,
+    .savings-intro {
+        padding: 42px 5% 30px;
+    }
+
+    .dashboard-intro h1,
+    .transactions-intro h1,
+    .savings-intro h1 {
+        font-size: 2.15rem;
+    }
+
+    .budget-overview,
+    .savings-overview,
+    .transaction-summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .overview-card,
+    .savings-overview-card,
+    .transaction-summary-card {
+        padding: 20px;
+    }
+
+    .overview-icon,
+    .savings-overview-icon {
+        margin-bottom: 10px;
+    }
+
+    .dashboard-layout,
+    .transactions-layout,
+    .savings-layout {
+        gap: 18px;
+    }
+
+    .dashboard-panel,
+    .transaction-form-panel,
+    .transaction-records-panel,
+    .savings-form-panel,
+    .savings-goals-panel {
+        padding: 22px 17px;
+    }
+
+    .panel-heading h2,
+    .transaction-panel-heading h2,
+    .records-heading h2,
+    .savings-panel-heading h2 {
+        font-size: 1.35rem;
+    }
+
+    .choice-group {
+        flex-direction: column;
+    }
+
+    .choice-option {
+        width: 100%;
+    }
+
+    .dashboard-bottom,
+    .transactions-bottom,
+    .savings-bottom {
+        padding: 24px 20px;
+    }
+
+    .bottom-actions,
+    .transactions-actions,
+    .savings-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .bottom-actions .button,
+    .transactions-actions .button,
+    .savings-actions .button {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .prototype-notice {
+        padding: 14px 16px;
+    }
+
+    .empty-goals {
+        padding: 28px 18px;
+    }
+
+    .savings-tip {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .help-container {
+        padding-top: 25px;
+    }
+
+    .help-hero {
+        margin-bottom: 35px;
+        padding: 38px 20px;
+    }
+
+    .help-hero h1 {
+        font-size: 2rem;
+    }
+
+    .help-section,
+    .privacy-section {
+        margin-bottom: 38px;
+    }
+
+    .help-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .help-card {
+        padding: 22px;
+    }
+
+    .help-container .section-heading h2,
+    .confirmation-panel h2,
+    .help-footer-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .confirmation-panel {
+        margin-bottom: 38px;
+        padding: 30px 20px;
+    }
+
+    .privacy-list {
+        padding-left: 22px;
+    }
+
+    .help-footer-cta {
+        padding: 30px 20px;
+    }
+
+    .site-footer {
+        padding: 28px 5%;
+    }
+}
+
+
+/* ---------- 24. REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

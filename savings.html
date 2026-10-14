@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Set personal savings goals and plan your savings with PesoWise.">
+    <title>Savings Goals | PesoWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">Peso<span>Wise</span></a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="transactions.html">Expenses</a></li>
+                <li><a href="savings.html" aria-current="page">Savings Goals</a></li>
+                <li><a href="confirmation.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="savings-page">
+
+        <section class="savings-intro">
+            <p class="eyebrow">A LITTLE SAVING GOES A LONG WAY</p>
+            <h1>Save for Something <span>You Love.</span></h1>
+            <p>
+                Whether it is a new gadget, school supplies, or an
+                emergency fund, give your savings a goal to work toward.
+            </p>
+
+            <a href="#create-goal" class="button button-primary">
+                Create a Savings Goal
+            </a>
+        </section>
+
+        <section class="savings-overview" aria-label="Savings overview">
+
+            <article class="savings-overview-card">
+                <div class="savings-overview-icon" aria-hidden="true">♡</div>
+                <p>Total Savings</p>
+                <h2>₱ —</h2>
+                <span>Total saved across your goals</span>
+            </article>
+
+            <article class="savings-overview-card">
+                <div class="savings-overview-icon" aria-hidden="true">☆</div>
+                <p>Savings Target</p>
+                <h2>₱ —</h2>
+                <span>Combined savings targets</span>
+            </article>
+
+            <article class="savings-overview-card">
+                <div class="savings-overview-icon" aria-hidden="true">◎</div>
+                <p>Active Goals</p>
+                <h2>—</h2>
+                <span>Your saved savings goals</span>
+            </article>
+
+        </section>
+
+        <div class="savings-layout">
+
+            <section class="savings-form-panel" id="create-goal">
+
+                <div class="savings-panel-heading">
+                    <p class="eyebrow">START PLANNING</p>
+                    <h2>Create Your Savings Goal</h2>
+                    <p>
+                        Give your goal a name and decide how much
+                        you want to save.
+                    </p>
+                </div>
+
+                <form id="savings-form">
+
+                    <div class="form-group">
+                        <label for="goal-name">What are you saving for?</label>
+                        <input
+                            type="text"
+                            id="goal-name"
+                            name="goal"
+                            placeholder="e.g. New laptop"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="target-amount">Target amount (PHP)</label>
+                        <input
+                            type="number"
+                            id="target-amount"
+                            name="target_amount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Enter your savings target"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="current-savings">Current savings (PHP)</label>
+                        <input
+                            type="number"
+                            id="current-savings"
+                            name="current_savings"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter what you have saved"
+                            value="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="target-date">Target date</label>
+                        <input
+                            type="date"
+                            id="target-date"
+                            name="target_date"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal-category">Goal category</label>
+                        <select
+                            id="goal-category"
+                            name="category"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select a category
+                            </option>
+                            <option value="education">Education</option>
+                            <option value="technology">Gadgets and Technology</option>
+                            <option value="personal">Personal Purchase</option>
+                            <option value="emergency">Emergency Savings</option>
+                            <option value="travel">Travel and Experiences</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="button button-primary">
+                        Save Savings Goal
+                    </button>
+
+                    <p class="form-hint savings-form-hint">
+                        Your savings goal will be saved in this browser
+                        so you can review your progress later.
+                    </p>
+
+                </form>
+            </section>
+
+            <section class="savings-goals-panel">
+
+                <div class="savings-panel-heading">
+                    <p class="eyebrow">YOUR FUTURE PLANS</p>
+                    <h2>Your Savings Goals</h2>
+                    <p>
+                        Keep your goals visible to help you stay
+                        focused on what matters to you.
+                    </p>
+                </div>
+
+                <div class="empty-goals">
+                    <div class="empty-goals-icon" aria-hidden="true">♡</div>
+                    <h3>Your goals start here.</h3>
+                    <p>
+                        Create your first savings goal to see your
+                        target, current savings, and progress here.
+                    </p>
+                    <a href="#create-goal" class="text-link">
+                        Plan your first goal &rarr;
+                    </a>
+                </div>
+
+                <div class="savings-tip">
+                    <span class="tip-icon" aria-hidden="true">✦</span>
+                    <div>
+                        <h3>A tip for your savings journey</h3>
+                        <p>
+                            Choose a realistic target and set aside
+                            an amount that fits your allowance and
+                            everyday needs.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <section class="savings-bottom">
+            <div>
+                <p class="eyebrow">YOUR GOALS, YOUR PACE</p>
+                <h2>Progress begins with a plan.</h2>
+                <p>
+                    Organize your budget, keep track of your spending,
+                    and make room for the things you want to save for.
+                </p>
+            </div>
+
+            <div class="savings-actions">
+                <a href="dashboard.html" class="button button-primary">
+                    Plan Your Budget
+                </a>
+                <a href="transactions.html" class="button button-secondary">
+                    Track Expenses
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html" class="logo">Peso<span>Wise</span></a>
+        <p>Make Every Peso Count.</p>
+        <p class="copyright">
+            &copy; 2026 PesoWise. Student budgeting website prototype.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

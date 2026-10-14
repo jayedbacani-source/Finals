@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan your allowance and organize your budget with PesoWise.">
+    <title>Budget Dashboard | PesoWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">Peso<span>Wise</span></a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+                <li><a href="transactions.html">Expenses</a></li>
+                <li><a href="savings.html">Savings Goals</a></li>
+                <li><a href="confirmation.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-page">
+
+        <section class="dashboard-intro">
+            <p class="eyebrow">YOUR PERSONAL BUDGET</p>
+            <h1>Your Budget, <span>Your Way.</span></h1>
+            <p>
+                Start with your allowance, plan your spending,
+                and create a budget that works for your student life.
+            </p>
+        </section>
+
+        <section class="budget-overview" aria-label="Budget overview">
+            <article class="overview-card">
+                <div class="overview-icon" aria-hidden="true">₱</div>
+                <p>Planned Budget</p>
+                <h2>₱ —</h2>
+                <span>Enter your budget below</span>
+            </article>
+
+            <article class="overview-card">
+                <div class="overview-icon" aria-hidden="true">↗</div>
+                <p>Total Expenses</p>
+                <h2>₱ —</h2>
+                <span>All recorded expenses</span>
+            </article>
+
+            <article class="overview-card">
+                <div class="overview-icon" aria-hidden="true">♡</div>
+                <p>Remaining Balance</p>
+                <h2>₱ —</h2>
+                <span>Allowance minus recorded expenses</span>
+            </article>
+        </section>
+
+        <div class="dashboard-layout">
+
+            <section class="dashboard-panel allowance-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">STEP 01</p>
+                        <h2>Your Allowance</h2>
+                    </div>
+                    <span class="panel-symbol" aria-hidden="true">₱</span>
+                </div>
+
+                <p class="panel-description">
+                    How much money do you receive? Enter your allowance
+                    to start planning your budget.
+                </p>
+
+                <form id="allowance-form">
+                    <div class="form-group">
+                        <label for="allowance">Allowance amount (PHP)</label>
+                        <input
+                            type="number"
+                            id="allowance"
+                            name="allowance"
+                            min="0"
+                            step="0.01"
+                            placeholder="e.g. 3000"
+                            required
+                        >
+                    </div>
+
+                    <fieldset class="form-group">
+                        <legend>Allowance frequency</legend>
+
+                        <div class="choice-group">
+                            <label class="choice-option">
+                                <input
+                                    type="radio"
+                                    name="frequency"
+                                    value="weekly"
+                                    required
+                                >
+                                Weekly
+                            </label>
+
+                            <label class="choice-option">
+                                <input
+                                    type="radio"
+                                    name="frequency"
+                                    value="monthly"
+                                >
+                                Monthly
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <p class="form-hint">
+                        Choose the period that matches how you receive
+                        your allowance.
+                    </p>
+
+                    <button type="submit" class="button button-primary">
+                        Save Allowance
+                    </button>
+                </form>
+            </section>
+
+            <section class="dashboard-panel category-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">STEP 02</p>
+                        <h2>Plan Your Budget</h2>
+                    </div>
+                    <span class="panel-symbol" aria-hidden="true">♡</span>
+                </div>
+
+                <p class="panel-description">
+                    Decide how much you want to set aside for each
+                    part of your student life.
+                </p>
+
+                <form id="budget-form">
+                    <div class="form-group">
+                        <label for="food">Food and drinks (PHP)</label>
+                        <input
+                            type="number"
+                            id="food"
+                            name="food"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter planned amount"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transport">Transportation (PHP)</label>
+                        <input
+                            type="number"
+                            id="transport"
+                            name="transport"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter planned amount"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="school">School expenses (PHP)</label>
+                        <input
+                            type="number"
+                            id="school"
+                            name="school"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter planned amount"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personal">Personal needs (PHP)</label>
+                        <input
+                            type="number"
+                            id="personal"
+                            name="personal"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter planned amount"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget-savings">Savings (PHP)</label>
+                        <input
+                            type="number"
+                            id="budget-savings"
+                            name="savings"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter planned amount"
+                            required
+                        >
+                    </div>
+
+                    <div class="budget-tip">
+                        <strong>A little reminder</strong>
+                        <p>
+                            Try to keep your planned spending within
+                            your allowance and set aside an amount
+                            for your savings goal.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="button button-primary">
+                        Save Budget Plan
+                    </button>
+                </form>
+            </section>
+
+        </div>
+
+        <section class="dashboard-bottom">
+            <div>
+                <p class="eyebrow">KEEP YOUR FINANCES ORGANIZED</p>
+                <h2>Every peso has a purpose.</h2>
+                <p>
+                    Keep your budget plan in mind as you record your
+                    expenses and work toward your savings goals.
+                </p>
+            </div>
+
+            <div class="bottom-actions">
+                <a href="transactions.html" class="button button-primary">
+                    Track Expenses
+                </a>
+
+                <a href="savings.html" class="button button-secondary">
+                    View Savings Goals
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html" class="logo">Peso<span>Wise</span></a>
+        <p>Make Every Peso Count.</p>
+        <p class="copyright">
+            &copy; 2026 PesoWise. Student budgeting website prototype.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
